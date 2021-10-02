@@ -1,5 +1,6 @@
 config BR2_PACKAGE_QT6WEBSOCKETS
-	bool "qt6websockets"
+	bool "qt6-websockets"
+	select BR2_PACKAGE_QT6BASE
 	select BR2_PACKAGE_QT6BASE_NETWORK
 	help
 	  Qt is a cross-platform application and UI framework for

@@ -37,8 +37,9 @@ menuconfig BR2_PACKAGE_QT6
 	  http://qt.io
 
 if BR2_PACKAGE_QT6
-source "package/qt6/qt6base/Config.in"
-source "package/qt6/qt6websockets/Config.in"
+source "package/qt6/qt6-base/Config.in"
+source "package/qt6/qt6-websockets/Config.in"
+source "package/qt6/qt6-virtualkeyboard/Config.in"
 #source "package/qt6/qt63d/Config.in"
 #source "package/qt6/qt6charts/Config.in"
 #source "package/qt6/qt6coap/Config.in"
@@ -63,7 +64,6 @@ source "package/qt6/qt6websockets/Config.in"
 #source "package/qt6/qt6serialport/Config.in"
 #source "package/qt6/qt6svg/Config.in"
 #source "package/qt6/qt6tools/Config.in"
-#source "package/qt6/qt6virtualkeyboard/Config.in"
 #source "package/qt6/qt6wayland/Config.in"
 #source "package/qt6/qt6webchannel/Config.in"
 #source "package/qt6/qt6webkit/Config.in"

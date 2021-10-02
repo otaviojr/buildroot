@@ -1,0 +1,19 @@
+################################################################################
+#
+# qt6websockets
+#
+################################################################################
+
+QT6VIRTUALKEYBOARD_VERSION = $(QT6_VERSION)
+QT6VIRTUALKEYBOARD_SITE = $(QT6_SITE)
+QT6VIRTUALKEYBOARD_SOURCE = qtvirtualkeyboard-$(QT6_SOURCE_TARBALL_PREFIX)-$(QT6WEBSOCKETS_VERSION).tar.xz
+QT6VIRTUALKEYBOARD_INSTALL_STAGING = YES
+QT6VIRTUALKEYBOARD_LICENSE = GPL-3.0
+QT6VIRTUALKEYBOARD_LICENSE_FILES = LICENSE.GPL3
+
+
+QT6VIRTUALKEYBOARD_LANGUAGE_LAYOUTS = $(call qstrip,$(BR2_PACKAGE_QT6VIRTUALKEYBOARD_LANGUAGE_LAYOUTS))
+ifneq ($(strip $(QT6VIRTUALKEYBOARD_LANGUAGE_LAYOUTS)),)
+QT6VIRTUALKEYBOARD_CONF_OPTS += -vkb-enable $(foreach lang,$(QT6VIRTUALKEYBOARD_LANGUAGE_LAYOUTS),$(lang))
+endif
+$(eval $(cmake-package))

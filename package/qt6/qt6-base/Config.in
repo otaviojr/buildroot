@@ -1,5 +1,5 @@
 config BR2_PACKAGE_QT6BASE
-	bool "qt6base"
+	bool "qt6-base"
 	select BR2_PACKAGE_DOUBLE_CONVERSION
 	select BR2_PACKAGE_LIBB2
 	select BR2_PACKAGE_ZLIB
