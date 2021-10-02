@@ -16,6 +16,7 @@ config BR2_PACKAGE_CAGE
 	depends on BR2_PACKAGE_HAS_LIBEGL_WAYLAND # wlroots
 	depends on BR2_PACKAGE_HAS_LIBGLES # wlroots
 	depends on BR2_PACKAGE_HAS_UDEV # wlroots
+	select BR2_PACKAGE_PROCPS_NG
 	select BR2_PACKAGE_WLROOTS
 	help
 	  Kiosk compositor for Wayland, which displays a single
