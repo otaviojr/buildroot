@@ -1,0 +1,40 @@
+################################################################################
+#
+# qt6tools
+#
+################################################################################
+
+QT6TOOLS_VERSION = $(QT6_VERSION)
+QT6TOOLS_SITE = $(QT6_SITE)
+QT6TOOLS_SOURCE = qttools-$(QT6_SOURCE_TARBALL_PREFIX)-$(QT6TOOLS_VERSION).tar.xz
+QT6TOOLS_INSTALL_STAGING = YES
+QT6TOOLS_LICENSE = GPL-2.0+ or LGPL-3.0, GPL-3.0 with exception(tools)
+QT6TOOLS_LICENSE_FILES = LICENSE.GPL2 LICENSE.GPL3 LICENSE.GPL3-EXCEPT LICENSE.LGPL3
+
+QT6TOOLS_DEPENDENCIES = \
+	host-ninja \
+	host-qt6tools
+
+QT6TOOLS_CONF_OPTS += \
+	-GNinja \
+	-DQT_HOST_PATH=$(HOST_DIR) \
+	-DQT_QMLTOOLS_DIR=$(HOST_DIR)
+
+QT6TOOLS_MAKE = ninja
+QT6TOOLS_INSTALL_STAGING_OPTS = install
+QT6TOOLS_INSTALL_STAGING_ENV = DESTDIR="$(STAGING_DIR)"
+QT6TOOLS_INSTALL_TARGET_OPTS = install
+QT6TOOLS_INSTALL_TARGET_ENV = DESTDIR="$(TARGET_DIR)"
+
+HOST_QT6TOOLS_DEPENDENCIES = host-ninja host-zlib
+HOST_QT6TOOLS_MAKE = ninja
+HOST_QT6TOOLS_CONF_OPTS += \
+	-GNinja \
+	-DBUILD_SHARED_LIBS=OFF \
+	-DFEATURE_GUI=ON \
+	-DCMAKE_DESTDIR=$(HOST_DIR) \
+	-DCMAKE_INSTALL_PREFIX=$(HOST_DIR) \
+	-DCMAKE_INSTALL_RPATH=$(HOST_DIR)/lib
+
+$(eval $(cmake-package))
+$(eval $(host-cmake-package))

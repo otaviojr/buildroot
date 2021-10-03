@@ -1,0 +1,11 @@
+config BR2_PACKAGE_QT6SHADERTOOLS
+	bool "qt6-shadertools"
+	select BR2_PACKAGE_QT6BASE
+	help
+		Qt is a cross-platform application and UI framework for
+		developers using C++.
+
+		Qt Declarative module provides the Qt QML and Qt Quick
+		modules for developing UIs with the QML language
+
+		https://doc.qt.io/qt-6/qtqml-index.html

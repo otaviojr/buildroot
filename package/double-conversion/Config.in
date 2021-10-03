@@ -9,5 +9,5 @@ config BR2_PACKAGE_DOUBLE_CONVERSION
 
 	  https://github.com/google/double-conversion
 
-comment "double-conversion needs a toolchian w/ C++
+comment "double-conversion needs a toolchian w/ C++"
 	depends on !BR2_INSTALL_LIBSTDCPP

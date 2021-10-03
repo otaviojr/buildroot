@@ -1,0 +1,29 @@
+config BR2_PACKAGE_QT6DECLARATIVE
+	bool "qt6-declarative"
+	select BR2_PACKAGE_QT6BASE
+	help
+		Qt is a cross-platform application and UI framework for
+		developers using C++.
+
+		Qt Declarative module provides the Qt QML and Qt Quick
+		modules for developing UIs with the QML language
+
+		https://doc.qt.io/qt-6/qtqml-index.html
+
+	if BR2_PACKAGE_QT6DECLARATIVE
+
+	config BR2_PACKAGE_QT6DECLARATIVE_QUICK
+		bool "quick module"
+		depends on BR2_PACKAGE_QT6BASE_OPENGL
+		depends on BR2_PACKAGE_QT6BASE_TEST
+		depends on BR2_PACKAGE_QT6SHADERTOOLS
+		help
+			Quick/QuickControls support
+
+	comment "Quick depends on Qt6 OpenGL module"
+		depends on !BR2_PACKAGE_QT6BASE_OPENGL
+
+	comment "Quick depends on Qt6 Test module"
+		depends on !BR2_PACKAGE_QT6BASE_TEST
+
+	endif

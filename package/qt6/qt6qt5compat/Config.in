@@ -1,0 +1,10 @@
+config BR2_PACKAGE_QT6QT5CPMPAT
+	bool "qt6-qt5-compatibility"
+	select BR2_PACKAGE_QT6BASE
+	help
+	  Qt is a cross-platform application and UI framework for
+	  developers using C++.
+
+	  This is a compatibility layer to some qt5 features.
+
+		https://doc.qt.io/qt-6/qtgraphicaleffects5-index.html

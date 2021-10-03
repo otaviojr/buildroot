@@ -1,0 +1,15 @@
+comment "QT6 Translation module depends on QT6 Declarative module"
+  depends on !BR2_PACKAGE_QT6DECLARATIVE
+	
+config BR2_PACKAGE_QT6TRANSLATION
+	bool "qt6-translation"
+	depends on BR2_PACKAGE_QT6DECLARATIVE
+	select BR2_PACKAGE_QT6BASE
+	select BR2_PACKAGE_QT6TOOLS
+	help
+	  Qt is a cross-platform application and UI framework for
+	  developers using C++.
+
+	  The Qt Translation contains the QT translation catalog
+
+	  https://doc.qt.io/qt-6/internationalization.html

@@ -41,10 +41,11 @@ config BR2_PACKAGE_QT6BASE_CUSTOM_CONF_OPTS
 #	  This option allows to set the path of such a configuration
 #	  file, which Buildroot will give to Qt at compile time.
 #
+
 config BR2_PACKAGE_QT6BASE_EXAMPLES
 	bool "Compile and install examples (with code)"
-#	select BR2_PACKAGE_QT6BASE_NETWORK
-#	select BR2_PACKAGE_QT6BASE_XML
+	select BR2_PACKAGE_QT6BASE_NETWORK
+	select BR2_PACKAGE_QT6BASE_XML
 	help
 	  If unsure, say N.
 
@@ -123,7 +124,7 @@ config BR2_PACKAGE_QT6BASE_TEST
 config BR2_PACKAGE_QT6BASE_XML
 	bool "XML module"
 	help
-	  This options enables the Qt6Xml library.
+		This options enables the Qt6Xml library.
 
 config BR2_PACKAGE_QT6BASE_GUI
 	bool "gui module"
@@ -135,7 +136,7 @@ config BR2_PACKAGE_QT6BASE_GUI
 	       !BR2_PACKAGE_QT6BASE_XCB && \
 	       !BR2_PACKAGE_QT6BASE_EGLFS
 	help
-	  This option enables the Qt6Gui library.
+		This option enables the Qt6Gui library.
 
 if BR2_PACKAGE_QT6BASE_GUI
 

@@ -1,0 +1,24 @@
+config BR2_PACKAGE_QT6VIRTUALKEYBOARD
+	bool "qt6-virtualkeyboard"
+	select BR2_PACKAGE_QT6BASE
+	select BR2_PACKAGE_QT6DECLARATIVE
+	select BR2_PACKAGE_QT6SVG
+	help
+	  Qt is a cross-platform application and UI framework for
+	  developers using C++.
+
+		Qt Virtual Keyboard is a virtual keyboard framework that
+	  consists of a C++ backend supporting custom input methods as
+	  well as a UI frontend implemented in QML.
+
+	  http://doc.qt.io/qt-6/qtvirtualkeyboard-index.html
+
+if BR2_PACKAGE_QT6VIRTUALKEYBOARD
+
+config BR2_PACKAGE_QT6VIRTUALKEYBOARD_ARROW_KEY_NAVIGATION
+	bool "Arrow key navigation"
+	help
+	  Allows controlling the keyboard using the arrow and return
+	  keys.
+
+endif
