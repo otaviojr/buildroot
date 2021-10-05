@@ -58,9 +58,16 @@ define OPENSSH_INSTALL_PAM_CONF
 	$(SED) 's/\#UsePAM no/UsePAM yes/' $(TARGET_DIR)/etc/ssh/sshd_config
 endef
 
+ifeq ($(BR2_PACKAGE_OPENSSH_PERMIT_ROOT_LOGIN),y)
+define OPENSSH_INSTALL_PAM_ROOT_LOGIN_CONF
+  $(SED) 's/\#PermitRootLogin prohibit-password/PermitRootLogin yes/' $(TARGET_DIR)/etc/ssh/sshd_config
+endef
+endif
+
 OPENSSH_DEPENDENCIES += linux-pam
 OPENSSH_CONF_OPTS += --with-pam
 OPENSSH_POST_INSTALL_TARGET_HOOKS += OPENSSH_INSTALL_PAM_CONF
+OPENSSH_POST_INSTALL_TARGET_HOOKS += OPENSSH_INSTALL_PAM_ROOT_LOGIN_CONF
 else
 OPENSSH_CONF_OPTS += --without-pam
 endif

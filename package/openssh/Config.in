@@ -31,4 +31,14 @@ config BR2_PACKAGE_OPENSSH_KEY_UTILS
 	help
 	  Key utilities: ssh-keygen, ssh-keyscan.
 
+comment "Allow root login depends on Linux Pam"
+	depends on !BR2_PACKAGE_LINUX_PAM
+	
+config BR2_PACKAGE_OPENSSH_PERMIT_ROOT_LOGIN
+	bool "Allow root login"
+	default y
+	depends on BR2_PACKAGE_LINUX_PAM
+	help
+	  Key utilities: ssh-keygen, ssh-keyscan.
+
 endif

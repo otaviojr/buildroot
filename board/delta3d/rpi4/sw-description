@@ -1,0 +1,17 @@
+software = {
+	version = "0.1.0";
+
+	hardware-compatibility: [ "1.0" ];
+
+	images: (
+	{
+		filename = "boot.vfat.gz";
+		compressed = true;
+		device = "/dev/sda1";
+	},
+	{
+		filename = "rootfs.ext2.gz";
+		compressed = true;
+		device = "/dev/sda2";
+	});
+}

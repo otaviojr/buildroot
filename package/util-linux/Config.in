@@ -127,6 +127,11 @@ config BR2_PACKAGE_UTIL_LINUX_FDFORMAT
 	help
 	  Low-level format a floppy disk
 
+config BR2_PACKAGE_UTIL_LINUX_FDISK
+	bool "fdisk"
+	help
+	  fdisk
+
 config BR2_PACKAGE_UTIL_LINUX_FSCK
 	bool "fsck"
 	depends on BR2_USE_MMU # fork()
