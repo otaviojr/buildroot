@@ -6,3 +6,11 @@ set -e
 BOARD_DIR="$(dirname $0)"
 
 cp ${BOARD_DIR}/fstab ${TARGET_DIR}/etc/fstab
+[ -d ${TARGET_DIR}/var/empty ] || mkdir ${TARGET_DIR}/var/empty
+
+#Offline system update configuration
+cp ${BOARD_DIR}/system-update.sh ${TARGET_DIR}/usr/bin/system-update.sh
+chmod 755 ${TARGET_DIR}/usr/bin/system-update.sh
+cp ${BOARD_DIR}/system-update.service ${TARGET_DIR}/lib/systemd/system/system-update.service
+[ -d ${TARGET_DIR}/usr/lib/systemd/system/system-update.target.wants ] || mkdir ${TARGET_DIR}/usr/lib/systemd/system/system-update.target.wants
+ln -sf /lib/systemd/system/system-update.service ${TARGET_DIR}/usr/lib/systemd/system/system-update.target.wants/system-update.service

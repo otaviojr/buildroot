@@ -28,7 +28,9 @@ UTIL_LINUX_INSTALL_STAGING = YES
 UTIL_LINUX_DEPENDENCIES = \
 	host-pkgconf \
 	$(if $(BR2_PACKAGE_UTIL_LINUX_LIBS),util-linux-libs) \
+	$(if $(BR2_PACKAGE_SYSTEMD),systemd) \
 	$(TARGET_NLS_DEPENDENCIES)
+
 UTIL_LINUX_CONF_OPTS += \
 	--disable-rpath \
 	--disable-makeinstall-chown

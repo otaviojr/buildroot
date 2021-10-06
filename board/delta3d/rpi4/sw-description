@@ -7,11 +7,17 @@ software = {
 	{
 		filename = "boot.vfat.gz";
 		compressed = true;
-		device = "/dev/sda1";
+		device = "/dev/sda2";
 	},
 	{
 		filename = "rootfs.ext2.gz";
 		compressed = true;
-		device = "/dev/sda2";
+		device = "/dev/sda5";
+	});
+
+	scripts: (
+	{
+					filename = "sw-update-script.sh";
+					type = "shellscript";
 	});
 }

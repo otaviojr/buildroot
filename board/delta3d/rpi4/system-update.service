@@ -1,0 +1,10 @@
+[Unit]
+Description=Updates the operating system whilst offline
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/system-update.sh
+
+[Install]
+WantedBy=system-update.target

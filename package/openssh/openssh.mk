@@ -84,11 +84,11 @@ define OPENSSH_INSTALL_SYSTEMD_SYSUSERS
 	$(INSTALL) -m 0644 -D package/openssh/sshd-sysusers.conf \
 		$(TARGET_DIR)/usr/lib/sysusers.d/sshd.conf
 endef
-else
+endif
+
 define OPENSSH_USERS
 	sshd -1 sshd -1 * /var/empty - - SSH drop priv user
 endef
-endif
 
 # Let the default install rule only install the configuration file.
 # The programs will be installed based on the config options selected.

@@ -17,7 +17,7 @@ SEATD_CONF_OPTS += \
 	-Dwerror=false
 
 ifeq ($(BR2_PACKAGE_SYSTEMD_LOGIND),y)
-SEATD_CONF_OPTS += -Dlibseat-logind=enabled
+SEATD_CONF_OPTS += -Dlibseat-logind=systemd
 SEATD_DEPENDENCIES += systemd
 else
 SEATD_CONF_OPTS += -Dlibseat-logind=disabled

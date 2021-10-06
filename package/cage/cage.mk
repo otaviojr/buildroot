@@ -12,7 +12,7 @@ CAGE_SITE_METHOD = git
 BR_NO_CHECK_HASH_FOR += cage-master-br1.tar.gz
 CAGE_LICENSE = MIT
 CAGE_LICENSE_FILES = LICENSE
-CAGE_DEPENDENCIES = host-pkgconf procps-ng wlroots
+CAGE_DEPENDENCIES = host-pkgconf procps-ng wayland wlroots
 CAGE_CONF_OPTS = -Dman-pages=disabled
 
 ifeq ($(BR2_PACKAGE_XORG7),y)

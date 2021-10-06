@@ -2561,4 +2561,8 @@ menu "Text editors and viewers"
 	source "package/vim/Config.in"
 endmenu
 
+menu "Delta3D Applications"
+  source "package/delta3d/Config.in"
+endmenu
+
 endmenu
