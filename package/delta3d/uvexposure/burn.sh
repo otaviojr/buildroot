@@ -1,2 +1,2 @@
 #!/bin/bash
-/app/bin/burn 2> /var/log/cage/burn_error.log > /var/log/cage/burn.log
+`/app/bin/burn >> /var/log/cage/burn.log 2>&1`

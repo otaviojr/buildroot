@@ -1,2 +1,2 @@
 #!/bin/bash
-/app/bin/burn --cli 2> /var/log/cage/burn_cli_error.log > /var/log/cage/burn_cli.log
+`/app/bin/burn --cli >> /var/log/cage/burn_cli.log 2>&1`

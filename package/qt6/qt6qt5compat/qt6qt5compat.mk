@@ -15,7 +15,6 @@ QT6QT5COMPAT_DEPENDENCIES = \
 	host-ninja \
 	qt6base
 
-
 QT6QT5COMPAT_CONF_OPTS += \
 	-GNinja \
 	-DQT_HOST_PATH=$(HOST_DIR) \

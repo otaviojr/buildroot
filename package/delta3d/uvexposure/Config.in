@@ -1,4 +1,4 @@
-config BR2_PACKAGE_DELTA3D_UVEXPOSURE
+config BR2_PACKAGE_UVEXPOSURE
 	bool "uvexposure"
 	help
 	  Install uvexposure application.
