@@ -11,7 +11,7 @@ UVEXPOSURE_SITE_METHOD = git
 BR_NO_CHECK_HASH_FOR += burn-main-br1.tar.gz
 UVEXPOSURE_LICENSE = MIT
 UVEXPOSURE_LICENSE_FILES = LICENSE
-UVEXPOSURE_DEPENDENCIES = qt6base qt6websockets qt6wayland qt6virtualkeyboard qt6svg qt6declarative
+UVEXPOSURE_DEPENDENCIES = qt6base qt6websockets qt6wayland qt6virtualkeyboard qt6svg qt6declarative qt6qt5compat cairo pango libglib2
 
 UVEXPOSURE_CONF_OPTS += \
 	-GNinja \

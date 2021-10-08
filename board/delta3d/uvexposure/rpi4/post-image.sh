@@ -21,8 +21,15 @@ ROOTPATH_TMP="$(mktemp -d)"
 
 rm -rf "${GENIMAGE_TMP}"
 
-cp -Rf ${TARGET_DIR}/var ${ROOTPATH_TMP}/var
+#cp -Rf ${TARGET_DIR}/var ${ROOTPATH_TMP}/var
 
+echo "Creating /var partition >> data.ext4"
+rm -f ${BINARIES_DIR}/data.ext4
+genext2fs -B 1024 -b 5242880 -d ${TARGET_DIR}/var -U -D ${BOARD_DIR}/data_device_table.txt ${BINARIES_DIR}/data.ext4
+tune2fs -O extents,uninit_bg,dir_index,has_journal,flex_bg,huge_file,extra_isize,dir_nlink,uninit_bg ${BINARIES_DIR}/data.ext4 && e2fsck -v -pf ${BINARIES_DIR}/data.ext4
+gzip -9 -c -n ${BINARIES_DIR}/data.ext4 > ${BINARIES_DIR}/data.ext4.gz
+
+echo "Creating sdcard.iso file"
 genimage \
         --rootpath "${ROOTPATH_TMP}"   \
         --tmppath "${GENIMAGE_TMP}"    \
@@ -34,6 +41,8 @@ cp ${BOARD_DIR}/sw-description ${BINARIES_DIR}
 cp ${BOARD_DIR}/sw-update-script.sh ${BINARIES_DIR}
 
 gzip -9 -c -n ${BINARIES_DIR}/boot.vfat > ${BINARIES_DIR}/boot.vfat.gz
+
+echo "Creating swupdate swu file"
 
 IMG_FILES="sw-description boot.vfat.gz rootfs.ext2.gz sw-update-script.sh"
 

@@ -8,11 +8,11 @@ disk:x:6:
 lp:x:7:
 mail:x:8:
 kmem:x:9:
-wheel:x:10:root,cage
+wheel:x:10:root
 cdrom:x:11:
 dialout:x:18:
 floppy:x:19:
-video:x:28:cage
+video:x:28:
 audio:x:29:
 tape:x:32:
 www-data:x:33:
@@ -23,5 +23,4 @@ staff:x:50:
 lock:x:54:
 netdev:x:82:
 users:x:100:
-cage:x:101:
 nobody:x:65534:
