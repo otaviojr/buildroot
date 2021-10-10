@@ -23,10 +23,12 @@ rm -rf "${GENIMAGE_TMP}"
 
 #cp -Rf ${TARGET_DIR}/var ${ROOTPATH_TMP}/var
 
-echo "Creating /var partition >> data.ext4"
+echo "Removing old data partition"
 rm -f ${BINARIES_DIR}/data.ext4
+echo "Creating /var partition >> data.ext4"
 genext2fs -B 1024 -b 5242880 -d ${TARGET_DIR}/var -U -D ${BOARD_DIR}/data_device_table.txt ${BINARIES_DIR}/data.ext4
-tune2fs -O extents,uninit_bg,dir_index,has_journal,flex_bg,huge_file,extra_isize,dir_nlink,uninit_bg ${BINARIES_DIR}/data.ext4 && e2fsck -v -pf ${BINARIES_DIR}/data.ext4
+tune2fs -O extents,uninit_bg,dir_index,has_journal,flex_bg,huge_file,extra_isize,dir_nlink,uninit_bg ${BINARIES_DIR}/data.ext4
+e2fsck -pf ${BINARIES_DIR}/data.ext4 || true
 gzip -9 -c -n ${BINARIES_DIR}/data.ext4 > ${BINARIES_DIR}/data.ext4.gz
 
 echo "Creating sdcard.iso file"

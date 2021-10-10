@@ -1,4 +1,4 @@
-# libudev list-devices
+# libinput list-devices
 # udevadm info <dev>
 # serial goes on rule
 # ENV{ID_SERIAL_SHORT}=="A120ECDC7035", ENV{WL_OUTPUT}="HDMI-A-1"

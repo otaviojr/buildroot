@@ -18,7 +18,7 @@ After=getty@%i.service
 
 [Service]
 Type=simple
-ExecStart=/app/cage.sh
+ExecStart=/usr/bin/cage
 Restart=always
 User=cage
 # Log this user with utmp, letting it show up with commands 'w' and

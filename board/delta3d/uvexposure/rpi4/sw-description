@@ -17,7 +17,7 @@ software = {
 
 	scripts: (
 	{
-					filename = "sw-update-script.sh";
-					type = "shellscript";
+		filename = "sw-update-script.sh";
+		type = "shellscript";
 	});
 }

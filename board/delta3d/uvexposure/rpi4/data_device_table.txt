@@ -7,4 +7,4 @@
 #
 # <name>				            <type>	<mode>	<uid>	<gid>	<major>	<minor>	<start>	<inc>	<count>
 /www				                   d	755	      33	  33	  -	      -	      -	      -	      -
-/log/cage				               d	644	      101	  101	  -	      -	      -	      -	      -
+/log/cage				               d	775	      101	  101	  -	      -	      -	      -	      -
