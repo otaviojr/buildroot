@@ -29,7 +29,6 @@ define UVEXPOSURE_INSTALL_SYSTEMD_SERVICES
 	$(INSTALL) -D -m 0755 package/delta3d/uvexposure/pamd_cage $(TARGET_DIR)/etc/pam.d/cage
 	$(INSTALL) -D -m 0755 package/delta3d/uvexposure/burn.sh $(TARGET_DIR)/app/burn.sh
 	$(INSTALL) -D -m 0755 package/delta3d/uvexposure/burn-cli.sh $(TARGET_DIR)/app/burn-cli.sh
-	$(INSTALL) -D -m 0755 package/delta3d/uvexposure/cage.sh $(TARGET_DIR)/app/cage.sh
 	$(INSTALL) -D -m 0755 package/delta3d/uvexposure/99-touch-rules.rules $(TARGET_DIR)/etc/udev/rules.d/99-touch-rules.rules
 	[ -d $(TARGET_DIR)/lib/systemd/system/graphical.target.wants ] || mkdir $(TARGET_DIR)/lib/systemd/system/graphical.target.wants
 	ln -sf /lib/systemd/system/cage@tty1.service $(TARGET_DIR)/lib/systemd/system/graphical.target.wants/cage@tty1.service
